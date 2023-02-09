@@ -4,7 +4,7 @@ CREATE TABLE `user` (
   `lname` varchar(50),
   `user` varchar(50),
   `Field` varchar(50),
-  `created` datetime not null current_timestamp,
+  `created` timestamp not null default localtimestamp,
   PRIMARY KEY (`uid`)
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE `contacts` (
   `lname` varchar(50),
   `email` varchar(50),
   `phone` varchar(50),
-  `created` datetime not null current_timestamp,
+  `created` timestamp not null default localtimestamp,
   PRIMARY KEY (`pid`),
   FOREIGN KEY (`uid`) REFERENCES `user`(`uid`)
 );
