@@ -1,21 +1,21 @@
 CREATE TABLE `user` (
-  `uid` int,
+  `uid` int not null auto_increment,
   `fname` varchar(50),
   `lname` varchar(50),
   `user` varchar(50),
   `Field` varchar(50),
-  `created` datetime,
+  `created` datetime not null current_timestamp,
   PRIMARY KEY (`uid`)
 );
 
 CREATE TABLE `contacts` (
-  `pid` int,
+  `pid` int not null auto_increment,
   `uid` int,
   `fname` varchar(50),
   `lname` varchar(50),
   `email` varchar(50),
   `phone` varchar(50),
-  `created` datetime,
+  `created` datetime not null current_timestamp,
   PRIMARY KEY (`pid`),
   FOREIGN KEY (`uid`) REFERENCES `user`(`uid`)
 );
